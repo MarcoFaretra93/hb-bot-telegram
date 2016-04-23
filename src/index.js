@@ -7,6 +7,7 @@ var comandoInfoLinea = require('./command/comandoInfoLinea');
 var previsionePaletta = require('./command/previsionePaletta');
 var previsioneLinea = require('./command/previsioneLinea');
 var comandoPreferiti = require('./command/comandoPreferiti');
+var comandoBroadcast = require('./command/sendBroadcastMessage');
 
 bot.onText(/^\/start$/, comandoStart);
 
@@ -27,4 +28,6 @@ bot.onText(/^\/preferiti$/, comandoPreferiti.comandoPreferiti);
 bot.onText(/^\/add[0-9]{1,5}$/, comandoPreferiti.addPreferito);
 
 bot.onText(/^\/remove[0-9]{1,5}$/, comandoPreferiti.removePreferito);
+
+bot.onText(/^\/broadcast /, comandoBroadcast);
 
